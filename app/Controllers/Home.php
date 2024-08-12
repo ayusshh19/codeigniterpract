@@ -11,4 +11,8 @@ class Home extends BaseController
         // print("hello");
         return view('welcome_message');
     }
+
+    public function testcontroller(){
+        return json_encode(["name"=>"ayush shukla","roll no "=>39]);
+    }
 }
