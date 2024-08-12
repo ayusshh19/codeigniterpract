@@ -15,4 +15,10 @@ class Home extends BaseController
     public function testcontroller(){
         return json_encode(["name"=>"ayush shukla","roll no "=>39]);
     }
+
+    public function users(){
+        $usermodel = new Autheticate() ;
+        $all_user_data = $usermodel->getalldata();
+        return view("users/userslist",["users"=> $all_user_data]);
+    }
 }
