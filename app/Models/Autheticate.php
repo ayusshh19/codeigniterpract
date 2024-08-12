@@ -58,8 +58,15 @@ class Autheticate extends Model
                 "Salary" => "38000"
             ]
         ];
-        $db = Database::connect();
-        $results = $db->query("select * from employees")->getResult('array');
+        $db = db_connect();
+        $builder = $db->table("employees");
+        // $builder->whereIn("empid",[1,2,4,5,6]);
+        // $builder->whereNotIn("empid",[1,5]);
+        // $builder->like("empname","i");
+        $query = $builder->get();
+        $results = $query->getResult('array');
+
+        // $results = $db->query("select * from employees")->getResult('array');
         return $results;
     }
 }
