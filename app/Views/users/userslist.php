@@ -29,7 +29,9 @@
                     </tr>
                 </thead>
                 <tbody>
-
+                <h1 class =" text-center m-4 text-2xl font-medium ">
+                    Employee Detail table
+                </h1>
                 <?php foreach ($users as $user) :?>
                     <tr class="border-b border-gray-200 dark:border-gray-700">
                         <th scope="row"
@@ -40,10 +42,10 @@
                         <?php echo $user["empname"]; ?>
                         </td>
                         <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">
-                        <?php echo $user["Designation"]; ?>
+                        <?php echo $user["designation"]; ?>
                         </td>
                         <td class="px-6 py-4">
-                            <?php echo $user["Salary"]; ?>
+                            <?php echo $user["salary"]; ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>

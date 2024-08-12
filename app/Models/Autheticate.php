@@ -1,14 +1,19 @@
 <?php
 namespace App\Models;
-use CodeIgniter\Model;
 
-class Autheticate extends Model { 
-    public function getdata(){
-        $data = ['name '=>"ayush shukla"];
+use CodeIgniter\Model;
+use Config\Database;
+
+class Autheticate extends Model
+{
+    public function getdata()
+    {
+        $data = ['name ' => "ayush shukla"];
         return json_encode($data);
     }
 
-    public function getalldata(){
+    public function getalldata()
+    {
         $data = [
             [
                 "empid" => 1,
@@ -53,6 +58,8 @@ class Autheticate extends Model {
                 "Salary" => "38000"
             ]
         ];
-        return $data;        
+        $db = Database::connect();
+        $results = $db->query("select * from employees")->getResult('array');
+        return $results;
     }
 }
