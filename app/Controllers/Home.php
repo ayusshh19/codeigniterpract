@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Libraries\Test;
 use App\Models\Autheticate;
 class Home extends BaseController
 {
@@ -13,6 +14,9 @@ class Home extends BaseController
     }
 
     public function testcontroller(){
+        // code from custom library 
+        // $obj = new Test();
+        // $obj->dbdata();
         return json_encode(["name"=>"ayush shukla","roll no "=>39]);
     }
 
