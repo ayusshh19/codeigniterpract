@@ -25,4 +25,8 @@ class Home extends BaseController
         $all_user_data = $usermodel->getalldata();
         return view("users/userslist",["users"=> $all_user_data]);
     }
+
+    public function testroute($userid,$sec){
+        return json_encode(["name"=>"ayush shukla","roll no "=>39,"userid"=>$userid,"secondpara"=>$sec]);
+    }
 }
